@@ -50,17 +50,81 @@ php -S 127.0.0.1:8080
 ```bash
 composer create-project seymennc/php-route php-route
 ```
-```bash
+```php
 cd php-route
 ```
-```bash
+```php
 php -S 127.0.0.1:8080
 ```
 
 #### If you will only use it in your project
-```bash
+```php
 composer require seymennc/php-route
 ```
+
+
+## Usage
+
+Include the autoloader in your project:
+```bash
+require 'vendor/autoload.php';
+```
+Then, include the web.php file in your project:
+```bash
+require __DIR__ . '/web/web.php';
+```
+Finally, add dispatch the routes:
+```php
+Route::dispatch();
+```
+
+### Basic Usage
+You can define your routes in the web.php file.
+
+This method defines a route that responds to GET requests to the /home URL. The function returns the string 'Home Page' when the route is accessed.
+#### Basic GET Route
+```php
+use Luminance\Service\phproute\Route\Route;
+
+Route::method('get')->route('/home', function() {
+    return 'Home Page';
+})->name('home');
+```
+###
+#### Basic POST Route
+
+In addition to the home URL, let's add a new route that responds to POST requests. When the route is accessed, the function returns the string 'Post Page'.
+```php
+Route::method('post')->route('/home', function() {
+    return 'Home Post Page';
+})->name('home');
+```
+
+###
+#### With Controller
+You can also define routes that respond to requests with a controller. In this example, the route responds to GET requests to the /about URL. When the route is accessed, the AboutController class's index method is called.
+```php
+Route::method('get')->route('/home', 'AboutController@index')->name('about');
+```
+
+###
+#### With Middleware
+You can define middleware for each route. In this example, the route responds to GET requests to the /contact URL. When the route is accessed, the function returns the string 'Contact Page'. The middleware function is called before the route is processed.
+```php
+Route::method('get')->route('/contact', function() {
+    return 'Contact Page';
+})->middleware('auth')->name('contact');
+```
+###
+#### Route Grouping and Prefix
+You can group similar routes to create a more organized and cleaner structure. In this example, the routes are grouped under the /admin prefix. The routes respond to GET requests to the /admin/dashboard and /admin/profile URLs.
+```php
+Route::prefix('/admin')->group(function() {
+    Route::method('get')->route('/dashboard', 'AdminController@index');
+    Route::method('post')->route('/profile', 'AdminController@profile');
+});
+```
+More examples will be found in the [Asgard Docs](https://seymencayir.com.tr/asgard/docs/).
 
 ## Contributing
 We welcome contributions! If you find a bug or have suggestions for improvements, please open an issue or contribute directly to the project.
