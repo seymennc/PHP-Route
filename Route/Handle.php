@@ -15,7 +15,6 @@ class Handle
      * @param $method
      * @param $params
      * @return void
-     * @throws \ReflectionException
      * @throws \Exception
      */
     public static function handleMiddleware($val, $url, $method, $params): void
@@ -86,7 +85,6 @@ class Handle
         } elseif (is_string($callback)) {
             [$controllerStr, $action] = explode('@', $callback);
             $controller = config('app.controller_path') . $controllerStr;
-            var_dump($controller);
             $reflectionMethod = new \ReflectionMethod($controller, $action);
             $methodParams = [];
 

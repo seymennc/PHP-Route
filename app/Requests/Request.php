@@ -2,6 +2,8 @@
 
 namespace Luminance\Service\phproute\app\Requests;
 
+use Luminance\Service\phproute\app\Database\Database;
+
 class Request
 {
     public string $url;
@@ -273,6 +275,7 @@ class Request
     {
         return $_SESSION ?? 'empty';
     }
+
     /**
      * Check if the request has a specific key.
      *

@@ -8,6 +8,8 @@ class IndexMiddleware
 {
     public function handle(Request $request, \Closure $next)
     {
+        //TODO: Implement Middleware
+
         echo "Index Middleware";
         return $next($request);
     }

@@ -4,7 +4,6 @@ namespace Luminance\Service\phproute\Route;
 
 class Query
 {
-
     /**
      * @return void
      * @throws \Exception
@@ -24,11 +23,9 @@ class Query
      */
     public static function hasPost($httpMethod, $method): void
     {
-        var_dump($httpMethod, $method);
         if ($httpMethod !== $method) {
             die(throw new \Exception("The page only works with a specific POST method"));
         }
-
     }
 
     /**

@@ -18,6 +18,7 @@ class Route extends Methods
     public static array $namedRoutes = [];
     public static array $pageMethod = [];
 
+
     /**
      * @return void
      * @throws \Exception

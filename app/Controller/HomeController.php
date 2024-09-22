@@ -11,6 +11,7 @@ class HomeController
 
         return 'Home Controller';
     }
+
     public function post(Request $request)
     {
         $request->validate([

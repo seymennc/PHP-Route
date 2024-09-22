@@ -4,6 +4,7 @@ namespace Luminance\Service\phproute\Route;
 
 
 use AllowDynamicProperties;
+use Closure;
 
 class Methods
 {
@@ -47,10 +48,10 @@ class Methods
     }
 
     /**
-     * @param \Closure $closure
+     * @param Closure $closure
      * @return void
      */
-    public function group(\Closure $closure): void
+    public function group(Closure $closure): void
     {
         $closure();
         Route::$prefix = '';
@@ -85,10 +86,18 @@ class Methods
 {
     private static string $currentMethod;
 
+    /**
+     * @param string $method
+     * @return void
+     */
     public function setMethod(string $method): void
     {
         self::$currentMethod = $method;
     }
+
+    /**
+     * @return string
+     */
     public static function getCurrentMethod(): string
     {
         return self::$currentMethod;

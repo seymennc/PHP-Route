@@ -1,6 +1,6 @@
 <?php
 
-namespace Luminance\Service\phproute\Service\app\Database;
+namespace Luminance\Service\phproute\app\Database;
 
 class Database
 {
@@ -13,7 +13,7 @@ class Database
 
     public function __construct()
     {
-        $this->db = new \PDO(sprintf('mysql:host=%s;port=%s;dbname=%s;charset=%s', env('DB_HOST'), env('DB_PORT'), env('DB_NAME'), env('DB_CHARSET')), env('DB_USERNAME'), env('DB_PASSWORD'));
+        $this->db = new \PDO(sprintf('mysql:host=%s;port=%s;dbname=%s;charset=%s', getenv('DB_HOST'), getenv('DB_PORT'), getenv('DB_NAME'), getenv('DB_CHARSET')), getenv('DB_USERNAME'), getenv('DB_PASSWORD'));
     }
 
     /**
@@ -90,7 +90,7 @@ class Database
     /**
      * @return mixed
      */
-    public function first()
+    public function first(): mixed
     {
         $this->prepareSql();
         $query = $this->db->prepare($this->sql);
