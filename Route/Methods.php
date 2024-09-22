@@ -1,6 +1,6 @@
 <?php
 
-namespace Luminance\phproute\Route;
+namespace Luminance\Service\phproute\Route;
 
 
 use AllowDynamicProperties;

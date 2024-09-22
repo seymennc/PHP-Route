@@ -1,6 +1,6 @@
 <?php
 
-namespace Luminance\phproute\app\Requests;
+namespace Luminance\Service\phproute\app\Requests;
 
 class Request
 {

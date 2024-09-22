@@ -1,6 +1,6 @@
 <?php
 
-use Luminance\phproute\Route\Route;
+use Luminance\Service\phproute\Route\Route;
 
 require __DIR__ . '/vendor/autoload.php';
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Luminance\phproute\app\Helpers;
+namespace Luminance\Service\phproute\app\Helpers;
 
 class Redirect
 {

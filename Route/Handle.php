@@ -1,11 +1,11 @@
 <?php
 
-namespace Luminance\phproute\Route;
+namespace Luminance\Service\phproute\Route;
 
-use Luminance\phproute\app\Helpers\Redirect;
-use Luminance\phproute\app\Kernel;
-use Luminance\phproute\app\Middlewares\Middlewares;
-use Luminance\phproute\app\Requests\Request;
+use Luminance\Service\phproute\app\Helpers\Redirect;
+use Luminance\Service\phproute\app\Kernel;
+use Luminance\Service\phproute\app\Middlewares\Middlewares;
+use Luminance\Service\phproute\app\Requests\Request;
 
 class Handle
 {
@@ -85,8 +85,8 @@ class Handle
             echo call_user_func_array($callback, $params);
         } elseif (is_string($callback)) {
             [$controllerStr, $action] = explode('@', $callback);
-            $controller = '\Luminance\phproute\App\Controller\\' . $controllerStr;
-
+            $controller = config('app.controller_path') . $controllerStr;
+            var_dump($controller);
             $reflectionMethod = new \ReflectionMethod($controller, $action);
             $methodParams = [];
 

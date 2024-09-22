@@ -1,8 +1,8 @@
 <?php
 
-namespace Luminance\phproute\app;
+namespace Luminance\Service\phproute\app;
 
-use Luminance\phproute\app\Middlewares\Middlewares;
+use Luminance\Service\phproute\app\Middlewares\Middlewares;
 
 class Kernel
 {

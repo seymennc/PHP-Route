@@ -2,7 +2,7 @@
     "name": "seymennc/php-route",
     "autoload": {
         "psr-4": {
-            "Luminance\\phproute\\": "./",
+            "Luminance\\Service\\phproute\\": "./",
             "App\\": "app/"
         },
         "files": [
@@ -15,5 +15,7 @@
             "email": "seymencayir429@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+      "ext-pdo": "*"
+    }
 }

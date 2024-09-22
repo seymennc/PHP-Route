@@ -1,6 +1,15 @@
 <?php
 
-use Luminance\phproute\Route\Route;
+/*------------------------------------------------
+| Route
+|-------------------------------------------------
+|
+| This file only handles route requests
+|
+--------------------------------------------------*/
+
+
+use Luminance\Service\phproute\Route\Route;
 
 Route::method('get')->route('/', 'HomeController@index')->name('home');
 

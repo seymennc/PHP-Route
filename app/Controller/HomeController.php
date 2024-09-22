@@ -1,8 +1,8 @@
 <?php
 
-namespace Luminance\phproute\app\Controller;
+namespace Luminance\Service\phproute\App\Controller;
 
-use Luminance\phproute\app\Requests\Request;
+use Luminance\Service\phproute\App\Requests\Request;
 
 class HomeController
 {

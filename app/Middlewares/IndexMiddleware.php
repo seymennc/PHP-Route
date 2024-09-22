@@ -1,8 +1,8 @@
 <?php
 
-namespace Luminance\phproute\app\Middlewares;
+namespace Luminance\Service\phproute\app\Middlewares;
 
-use Luminance\phproute\app\Requests\Request;
+use Luminance\Service\phproute\app\Requests\Request;
 
 class IndexMiddleware
 {
