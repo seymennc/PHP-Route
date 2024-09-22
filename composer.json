@@ -1,0 +1,19 @@
+{
+    "name": "seymennc/php-route",
+    "autoload": {
+        "psr-4": {
+            "Luminance\\phproute\\": "./",
+            "App\\": "app/"
+        },
+        "files": [
+            "app/Helpers/Helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Seymen Çayır",
+            "email": "seymencayir429@gmail.com"
+        }
+    ],
+    "require": {}
+}
